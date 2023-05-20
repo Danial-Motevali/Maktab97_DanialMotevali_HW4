@@ -18,7 +18,7 @@ namespace HW4
         string date = string.Empty;
         int finalId = 1;
 
-        public void AddingUser(string name, long phoneNumber, DateTime birthDay)
+        public bool AddingUser(string name, long phoneNumber, DateTime birthDay)
         {
             date = birthDay.ToString("dd/MM/yyyy");
             NewUserModal model1 = new NewUserModal();
@@ -32,14 +32,19 @@ namespace HW4
             var jsonToFile = JsonConvert.SerializeObject(model1);
 
             File.AppendAllText(path, jsonToFile + Environment.NewLine);
+
+            return true;
         }
         public int newid(int Id)
         {
-            var f = File.ReadAllLines(path);
-            foreach (string specificLine in f)
+            var pathLins = File.ReadAllLines(path);
+            foreach (string specificLine in pathLins)
             {
-                var g = JsonConvert.DeserializeObject<NewUserModal>(specificLine);
-                if(g.id == Id)
+                var fileToJson = JsonConvert.DeserializeObject<NewUserModal>(specificLine);
+                if(specificLine == "")
+                {
+                    return Id;
+                }else if (fileToJson.id == Id)
                 {
                     Id++;
                 }
