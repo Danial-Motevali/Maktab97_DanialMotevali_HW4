@@ -11,6 +11,6 @@ namespace HW4
     {
         public string name { get; set; }
         public long phoneNumber { get; set; }
-        public DateTime birthDay { get; set; }
+        public string birthDay { get; set; }
     }
 }
