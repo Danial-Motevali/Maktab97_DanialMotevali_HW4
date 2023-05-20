@@ -8,6 +8,7 @@ using System.IO;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 using System.Reflection;
+using System.Data;
 
 namespace HW4
 {
@@ -16,20 +17,21 @@ namespace HW4
         string? path = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName + "\\FileDataStorage.txt";
         string date = string.Empty;
         int finalId = 1;
-        
-        public void AddingUser(string name , long phoneNumber, DateTime birthDay)
-        {    
+
+        public void AddingUser(string name, long phoneNumber, DateTime birthDay)
+        {
             date = birthDay.ToString("dd/MM/yyyy");
             NewUserModal model1 = new NewUserModal();
-
 
             model1.id = newid(finalId);
             model1.name = name;
             model1.phoneNumber = phoneNumber;
             model1.birthDay = date;
+            model1.time = DateTime.Now.ToString();
 
+            var jsonToFile = JsonConvert.SerializeObject(model1);
 
-
+            File.AppendAllText(path, jsonToFile + Environment.NewLine);
         }
         public int newid(int Id)
         {
@@ -41,9 +43,7 @@ namespace HW4
                 {
                     Id++;
                 }
-                
             }
-
             return Id;
         }
     }
