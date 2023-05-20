@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace HW4
 {
-    internal class New_User
+    public class New_User
     {
+        public void AddingUser(string name , long phoneNumber, DateTime birthDay)
+        {
+
+        }
     }
 }
