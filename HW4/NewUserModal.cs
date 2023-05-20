@@ -9,8 +9,10 @@ namespace HW4
 {
     public class NewUserModal
     {
+        public int id { get; set; }
         public string name { get; set; }
         public long phoneNumber { get; set; }
         public string birthDay { get; set; }
+        
     }
 }
