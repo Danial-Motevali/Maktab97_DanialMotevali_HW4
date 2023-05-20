@@ -1,4 +1,6 @@
-﻿namespace HW4
+﻿using System.Runtime.InteropServices;
+
+namespace HW4
 {
     internal class Program
     {
@@ -11,6 +13,7 @@
             New_User user = new New_User();
             do 
             {
+                Console.Clear();
                 Console.WriteLine("--1.New user/2.Show list/3.Updata user/4.Delete user--");
                 input = Convert.ToInt32(Console.ReadLine());
 
@@ -24,8 +27,15 @@
                     phoneNumber = Convert.ToInt64(Console.ReadLine());
                     Console.Write("Birth-Day: ");
                     bithDay = Convert.ToDateTime(Console.ReadLine());
-                    user.AddingUser(name, phoneNumber, bithDay);
-
+                    var addingStutse = user.AddingUser(name, phoneNumber, bithDay);
+                    if(addingStutse == true)
+                    {
+                        Console.WriteLine("you have successfully add new user");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Unsuccessful to add user");
+                    }
                 }
                 else if(input == 2)
                 {
