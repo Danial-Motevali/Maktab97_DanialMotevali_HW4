@@ -14,7 +14,7 @@ namespace HW4
 {
     public class New_User
     {
-        string? path = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName + "\\FileDataStorage.txt";
+        string? path = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName + "\\FileDataStorage.csv";
         string date = string.Empty;
         int finalId = 1;
 
@@ -41,7 +41,7 @@ namespace HW4
             foreach (string specificLine in pathLins)
             {
                 var fileToJson = JsonConvert.DeserializeObject<NewUserModal>(specificLine);
-                if(specificLine == "")
+                if(specificLine == "" && fileToJson.id != Id)
                 {
                     return Id;
                 }else if (fileToJson.id == Id)
