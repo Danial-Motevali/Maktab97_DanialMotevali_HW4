@@ -7,6 +7,7 @@ using System.Text.Json;
 using System.IO;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
+using System.Reflection;
 
 namespace HW4
 {
@@ -18,36 +19,32 @@ namespace HW4
         
         public void AddingUser(string name , long phoneNumber, DateTime birthDay)
         {    
-            StreamWriter dataFile = new StreamWriter(path);
-            NewUserModal model1 = new NewUserModal();
             date = birthDay.ToString("dd/MM/yyyy");
+            NewUserModal model1 = new NewUserModal();
 
-            newid(finalId);
 
-            model1.id = finalId;
+            model1.id = newid(finalId);
             model1.name = name;
             model1.phoneNumber = phoneNumber;
             model1.birthDay = date;
-            
-            var toJson = JsonConvert.SerializeObject(model1);
-            dataFile.Write(toJson);
-            dataFile.Close();
-        }
-        public int newid(int id)
-        {
-            StreamReader readFile = new StreamReader(path);
-            var filetoJson = JsonConvert.DeserializeObject<NewUserModal>(readFile.ReadLine());
 
-            while (filetoJson != null)
+
+
+        }
+        public int newid(int Id)
+        {
+            var f = File.ReadAllLines(path);
+            foreach (string specificLine in f)
             {
-                if(filetoJson.id == id)
+                var g = JsonConvert.DeserializeObject<NewUserModal>(specificLine);
+                if(g.id == Id)
                 {
-                    readFile.Close();
-                    return id++;
+                    Id++;
                 }
+                
             }
-            readFile.Close();
-            return id;
+
+            return Id;
         }
     }
 }
