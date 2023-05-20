@@ -14,21 +14,40 @@ namespace HW4
     {
         string? path = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName + "\\FileDataStorage.txt";
         string date = string.Empty;
+        int finalId = 1;
         
         public void AddingUser(string name , long phoneNumber, DateTime birthDay)
-        {
-            date = birthDay.ToString("dd/MM/yyyy");
-            
+        {    
+            StreamWriter dataFile = new StreamWriter(path);
             NewUserModal model1 = new NewUserModal();
+            date = birthDay.ToString("dd/MM/yyyy");
+
+            newid(finalId);
+
+            model1.id = finalId;
             model1.name = name;
             model1.phoneNumber = phoneNumber;
             model1.birthDay = date;
-
-            var addtofile = JsonConvert.SerializeObject(model1);
-            StreamWriter dataFile = new StreamWriter(path);
-
-            dataFile.Write(addtofile);
+            
+            var toJson = JsonConvert.SerializeObject(model1);
+            dataFile.Write(toJson);
             dataFile.Close();
+        }
+        public int newid(int id)
+        {
+            StreamReader readFile = new StreamReader(path);
+            var filetoJson = JsonConvert.DeserializeObject<NewUserModal>(readFile.ReadLine());
+
+            while (filetoJson != null)
+            {
+                if(filetoJson.id == id)
+                {
+                    readFile.Close();
+                    return id++;
+                }
+            }
+            readFile.Close();
+            return id;
         }
     }
 }
