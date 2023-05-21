@@ -18,27 +18,6 @@ namespace HW4
 
             New_User newUser = new New_User();
             newUser.AddingUser(name, phone, birth);
-            //string date = string.Empty;
-            //date = birth.ToString("dd/MM/yyyy");
-            //NewUserModal model1 = new NewUserModal();
-
-            //var linse = File.ReadAllLines(path);
-
-            //foreach (var line in linse)
-            //{
-            //    var fileToJson = JsonConvert.DeserializeObject<NewUserModal>(line);
-            //    if (fileToJson.id == id)
-            //    {
-            //        fileToJson.id = id;
-            //        fileToJson.name = name;
-            //        fileToJson.phoneNumber = phone;
-            //        fileToJson.birthDay = date;
-            //        fileToJson.time = DateTime.Now.ToString();
-            //    }
-            //}
-
-            //var jsonToFile = JsonConvert.SerializeObject(fileToJson);
-            //File.AppendAllText(path, jsonToFile + Environment.NewLine);
 
             return true;
         }

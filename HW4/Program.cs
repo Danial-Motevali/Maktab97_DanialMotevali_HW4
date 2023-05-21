@@ -47,12 +47,12 @@ namespace HW4
                     if (addingStutse == true)
                     {
                         Console.WriteLine("you have successfully add new user");
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                     }
                     else
                     {
                         Console.WriteLine("Unsuccessful to add user");
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                     }
                 }
                 else if (input == 2)
@@ -63,7 +63,7 @@ namespace HW4
                     if (list == null)
                     {
                         Console.WriteLine("its empty");
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                         continue;
                     }
                     foreach (var item in list)
@@ -85,11 +85,13 @@ namespace HW4
                         var status = upData.upData(idForUpdata, name, phoneNumber, bithDay);
                         if (status == true)
                         {
-
+                            Console.WriteLine("you updata you user-name succesfuly");
+                            Thread.Sleep(2000);
                         }
                         else
                         {
-
+                            Console.WriteLine("you cont updata you user-name");
+                            Thread.Sleep(2000);
                         }
                     }
                     else if(inputShowList == "2")
