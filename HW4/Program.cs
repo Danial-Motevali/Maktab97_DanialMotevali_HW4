@@ -5,6 +5,8 @@
         static void Main(string[] args)
         {
             string? path = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName + "\\FileDataStorage.csv";
+            StreamWriter stream = new StreamWriter(path);
+            stream.Close();
             int input = 0;
             string name = string.Empty;
             long phoneNumber = 0;
