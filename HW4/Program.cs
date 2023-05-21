@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Design;
+using System.Threading.Channels;
 
 namespace HW4
 {
@@ -12,13 +13,18 @@ namespace HW4
             
             int input = 0;
             int idForDelete = 0;
+            int idForUpdata = 0;
+            string forUpdata;
+            string newForUpdata;
             string inputShowList;
             string name = string.Empty;
             long phoneNumber = 0;
             DateTime bithDay;
+
             New_User user = new New_User();
             ShowTheList showList = new ShowTheList();
             Delete_User delete_User = new Delete_User();
+            UpData upData = new UpData();
 
             do
             {
@@ -68,8 +74,25 @@ namespace HW4
                     inputShowList = Console.ReadLine();
                     if(inputShowList == "1")
                     {
+                        Console.Write("wich Id: ");
+                        idForUpdata = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Name: ");
+                        name = Console.ReadLine();
+                        Console.Write("Phone-Number: ");
+                        phoneNumber = Convert.ToInt64(Console.ReadLine());
+                        Console.Write("Birth-Day: ");
+                        bithDay = Convert.ToDateTime(Console.ReadLine());
+                        var status = upData.upData(idForUpdata, name, phoneNumber, bithDay);
+                        if (status == true)
+                        {
 
-                    }else if(inputShowList == "2")
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                    else if(inputShowList == "2")
                     {
                         Console.Write("wich Id: ");
                         idForDelete = Convert.ToInt32(Console.ReadLine());
