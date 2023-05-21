@@ -17,6 +17,7 @@ namespace HW4
             DateTime bithDay;
             New_User user = new New_User();
             ShowTheList showList = new ShowTheList();
+            Delete_User delete_User = new Delete_User();
 
             do
             {
@@ -69,7 +70,7 @@ namespace HW4
 
                     }else if(inputShowList == "2")
                     {
-
+                        delete_User.delete(1);
                     }
                     else
                     {
