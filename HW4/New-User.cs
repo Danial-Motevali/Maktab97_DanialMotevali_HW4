@@ -36,6 +36,7 @@ namespace HW4
         }
         public int newid(int Id)
         {
+            int fixid;
             var pathLins = File.ReadAllLines(path);
             foreach (string specificLine in pathLins)
             {
@@ -44,6 +45,14 @@ namespace HW4
                 {
                     return Id;
                 }else if (fileToJson.id == Id)
+                {
+                    Id++;
+                }
+            }
+            foreach(string specificLine in pathLins)
+            {
+                var fileToJson = JsonConvert.DeserializeObject<NewUserModal>(specificLine);
+                if (Id == fileToJson.id)
                 {
                     Id++;
                 }
