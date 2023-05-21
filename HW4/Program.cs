@@ -36,12 +36,12 @@
                     if (addingStutse == true)
                     {
                         Console.WriteLine("you have successfully add new user");
-                        Thread.Sleep(2000);
+                        Thread.Sleep(1000);
                     }
                     else
                     {
                         Console.WriteLine("Unsuccessful to add user");
-                        Thread.Sleep(2000);
+                        Thread.Sleep(1000);
                     }
                 }
                 else if (input == 2)
@@ -61,8 +61,8 @@
                     else
                     {
                         Console.WriteLine("its empty");
+                        Thread.Sleep(1000);
                     }
-
                 }
                 else
                 {

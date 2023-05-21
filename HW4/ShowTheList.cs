@@ -1,10 +1,13 @@
-﻿namespace HW4
+﻿using System.Data;
+
+namespace HW4
 {
     public class ShowTheList
     {
 
         public string[] ShowList(string path)
         {
+
             int i = 0;
             var g = File.ReadAllLines(path);
             string[] f = new string[g.Length];
@@ -13,6 +16,10 @@
             {
                 f[i] = line;
                 i++;
+            }
+            if(g.Length == 0)
+            {
+                return null;
             }
             return f;
         }
