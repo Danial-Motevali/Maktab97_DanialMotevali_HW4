@@ -18,7 +18,7 @@
             do
             {
                 Console.Clear();
-                Console.WriteLine("--1.New user/2.Show list/3.Updata user/4.Delete user--");
+                Console.WriteLine("--1.New user/2.Show list--");
                 Console.Write("-");
                 input = Convert.ToInt32(Console.ReadLine());
 
@@ -62,14 +62,6 @@
                     {
                         Console.WriteLine("its empty");
                     }
-
-                }
-                else if (input == 3)
-                {
-
-                }
-                else if (input == 4)
-                {
 
                 }
                 else
