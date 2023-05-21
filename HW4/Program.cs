@@ -36,7 +36,7 @@
                     if (addingStutse == true)
                     {
                         Console.WriteLine("you have successfully add new user");
-                        Thread.Sleep(3000);
+                        Thread.Sleep(2000);
                     }
                     else
                     {
