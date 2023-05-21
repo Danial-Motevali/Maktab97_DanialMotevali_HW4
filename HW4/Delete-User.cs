@@ -16,6 +16,7 @@ namespace HW4
             var readFile = File.ReadAllLines(path);
             StreamWriter w = new StreamWriter(path);
             w.Close();
+
             foreach (var line in readFile)
             {
                 var search = JsonConvert.DeserializeObject<NewUserModal>(line);
