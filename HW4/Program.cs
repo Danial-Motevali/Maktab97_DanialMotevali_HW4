@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
-namespace HW4
+﻿namespace HW4
 {
     internal class Program
     {
@@ -14,14 +12,14 @@ namespace HW4
             New_User user = new New_User();
             ShowTheList showList = new ShowTheList();
 
-            do 
+            do
             {
                 Console.Clear();
                 Console.WriteLine("--1.New user/2.Show list/3.Updata user/4.Delete user--");
                 Console.Write("-");
                 input = Convert.ToInt32(Console.ReadLine());
 
-                if(input == 1)
+                if (input == 1)
                 {
                     Console.Clear();
                     Console.WriteLine("--you are now adding a new user--");
@@ -32,7 +30,7 @@ namespace HW4
                     Console.Write("Birth-Day: ");
                     bithDay = Convert.ToDateTime(Console.ReadLine());
                     var addingStutse = user.AddingUser(name, phoneNumber, bithDay);
-                    if(addingStutse == true)
+                    if (addingStutse == true)
                     {
                         Console.WriteLine("you have successfully add new user");
                         Thread.Sleep(3000);
@@ -43,22 +41,31 @@ namespace HW4
                         Thread.Sleep(2000);
                     }
                 }
-                else if(input == 2)
+                else if (input == 2)
                 {
                     Console.Clear();
                     Console.WriteLine("--your are now see the existing list--\n");
                     var list = showList.ShowList(path);
-                    foreach(var item in list)
+                    if (list != null)
                     {
-                        Console.WriteLine(item);
+                        foreach (var item in list)
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\npress eny key to contnue");
+                        Console.ReadKey();
                     }
-                    Console.WriteLine("\npress eny key to contnue");
-                    Console.ReadKey();
+                    else
+                    {
+                        Console.WriteLine("its empty");
+                    }
+
                 }
                 else if (input == 3)
                 {
 
-                }else if (input == 4)
+                }
+                else if (input == 4)
                 {
 
                 }

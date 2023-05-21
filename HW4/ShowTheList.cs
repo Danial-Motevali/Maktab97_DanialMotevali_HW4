@@ -1,26 +1,27 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HW4
+﻿namespace HW4
 {
     public class ShowTheList
     {
-        
+
         public string[] ShowList(string path)
         {
             int i = 0;
-            var g = File.ReadAllLines(path);
-            string[] f = new string[g.Length];
-            foreach (string line in g)
+
+            if (File.ReadAllLines(path) == null)
             {
-                f[i] = line;
-                i++;
+                return null;
             }
-            return f;
+            else
+            {
+                var g = File.ReadAllLines(path);
+                string[] f = new string[g.Length];
+                foreach (string line in g)
+                {
+                    f[i] = line;
+                    i++;
+                }
+                return f;
+            }
         }
     }
 }
