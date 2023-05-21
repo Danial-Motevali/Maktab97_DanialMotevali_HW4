@@ -31,7 +31,7 @@ namespace HW4
                     phoneNumber = Convert.ToInt64(Console.ReadLine());
                     Console.Write("Birth-Day: ");
                     bithDay = Convert.ToDateTime(Console.ReadLine());
-                    var addingStutse = user.AddingUser(name, phoneNumber, bithDay, path);
+                    var addingStutse = user.AddingUser(name, phoneNumber, bithDay);
                     if(addingStutse == true)
                     {
                         Console.WriteLine("you have successfully add new user");
