@@ -1,4 +1,6 @@
-﻿namespace HW4
+﻿using System.ComponentModel.Design;
+
+namespace HW4
 {
     internal class Program
     {
@@ -9,6 +11,7 @@
             f.Close();
             
             int input = 0;
+            string inputShowList;
             string name = string.Empty;
             long phoneNumber = 0;
             DateTime bithDay;
@@ -49,20 +52,30 @@
                     Console.Clear();
                     Console.WriteLine("--your are now see the existing list--\n");
                     var list = showList.ShowList(path);
-                    if (list != null)
-                    {
-                        foreach (var item in list)
-                        {
-                            Console.WriteLine(item);
-                        }
-                        Console.WriteLine("\npress eny key to contnue");
-                        Console.ReadKey();
-                    }
-                    else
+                    if (list == null)
                     {
                         Console.WriteLine("its empty");
                         Thread.Sleep(1000);
+                        continue;
                     }
+                    foreach (var item in list)
+                    {
+                        Console.WriteLine(item);
+                    }
+                    Console.WriteLine("\n--1.updata the user/2.delete the user/press any key to exite");
+                    inputShowList = Console.ReadLine();
+                    if(inputShowList == "1")
+                    {
+
+                    }else if(inputShowList == "2")
+                    {
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+
                 }
                 else
                 {
