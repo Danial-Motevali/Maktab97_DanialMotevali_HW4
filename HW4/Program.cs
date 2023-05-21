@@ -6,11 +6,14 @@ namespace HW4
     {
         static void Main(string[] args)
         {
+            string? path = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName + "\\FileDataStorage.csv";
             int input = 0;
             string name = string.Empty;
             long phoneNumber = 0;
             DateTime bithDay;
             New_User user = new New_User();
+            ShowTheList showList = new ShowTheList();
+
             do 
             {
                 Console.Clear();
@@ -28,7 +31,7 @@ namespace HW4
                     phoneNumber = Convert.ToInt64(Console.ReadLine());
                     Console.Write("Birth-Day: ");
                     bithDay = Convert.ToDateTime(Console.ReadLine());
-                    var addingStutse = user.AddingUser(name, phoneNumber, bithDay);
+                    var addingStutse = user.AddingUser(name, phoneNumber, bithDay, path);
                     if(addingStutse == true)
                     {
                         Console.WriteLine("you have successfully add new user");
@@ -37,12 +40,16 @@ namespace HW4
                     else
                     {
                         Console.WriteLine("Unsuccessful to add user");
-                        Thread.Sleep(3000);
+                        Thread.Sleep(2000);
                     }
                 }
                 else if(input == 2)
                 {
-
+                    var list = showList.ShowList(path);
+                    foreach(var item in list)
+                    {
+                        Console.WriteLine(list);
+                    }
                 }else if (input == 3)
                 {
 
