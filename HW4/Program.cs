@@ -48,7 +48,7 @@ namespace HW4
                     var list = showList.ShowList(path);
                     foreach(var item in list)
                     {
-                        Console.WriteLine(list);
+                        Console.WriteLine(item);
                     }
                     Console.WriteLine("press eny key to contnue");
                     Console.ReadKey();
