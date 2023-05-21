@@ -14,20 +14,18 @@ namespace HW4
         {
             int i = 0;
             var readFile = File.ReadAllLines(path);
-            string[] strings = new string[readFile.Length];
-
+            StreamWriter w = new StreamWriter(path);
+            w.Close();
             foreach (var line in readFile)
             {
-                var g = JsonConvert.DeserializeObject(line);
-                var j = JsonConvert.DeserializeObject<NewUserModal>(line);
-                if (j.id == id)
+                var search = JsonConvert.DeserializeObject<NewUserModal>(line);
+                if(search.id == id)
                 {
                     continue;
                 }
-                strings[i] = g.ToString();
-                i++;
+                var final = JsonConvert.SerializeObject(search);
+                File.AppendAllText(path, final + Environment.NewLine);
             }
-            
         }
     }
 }

@@ -30,7 +30,6 @@ namespace HW4
             model1.time = DateTime.Now.ToString();
 
             var jsonToFile = JsonConvert.SerializeObject(model1);
-
             File.AppendAllText(path, jsonToFile + Environment.NewLine);
 
             return true;
