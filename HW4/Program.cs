@@ -70,7 +70,7 @@ namespace HW4
 
                     }else if(inputShowList == "2")
                     {
-                        delete_User.delete(1);
+                        delete_User.delete(2);
                     }
                     else
                     {

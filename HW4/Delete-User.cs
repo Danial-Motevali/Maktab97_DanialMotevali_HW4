@@ -18,8 +18,13 @@ namespace HW4
 
             foreach (var line in readFile)
             {
-                var j = JsonConvert.DeserializeObject(line);
-                strings[i] = j.ToString();
+                var g = JsonConvert.DeserializeObject(line);
+                var j = JsonConvert.DeserializeObject<NewUserModal>(line);
+                if (j.id == id)
+                {
+                    continue;
+                }
+                strings[i] = g.ToString();
                 i++;
             }
             
