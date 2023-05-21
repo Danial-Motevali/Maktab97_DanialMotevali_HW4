@@ -18,7 +18,7 @@ namespace HW4
         string date = string.Empty;
         int finalId = 1;
 
-        public bool AddingUser(string name, long phoneNumber, DateTime birthDay)
+        public bool AddingUser(string name, long phoneNumber, DateTime birthDay, string? path)
         {
             date = birthDay.ToString("dd/MM/yyyy");
             NewUserModal model1 = new NewUserModal();

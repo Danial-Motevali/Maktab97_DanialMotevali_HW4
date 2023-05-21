@@ -9,11 +9,12 @@ namespace HW4
 {
     public class ShowTheList
     {
-        object[] list;
-        int id = 1;
+        
         public object[] ShowList(string path)
-        {
-            var lines = File.ReadAllLines(path);
+        {   
+            int id = 1;
+            var lines = File.ReadAllLines(path); 
+            object[] list = new object[lines.Length];
             
             foreach (string line in lines)
             {
@@ -21,10 +22,9 @@ namespace HW4
                 if( speficLine.id == id)
                 {
                     list.Append(speficLine);
-                    this.id++;
+                    id++;
                 }
             }
-
             return list;
         }
     }
