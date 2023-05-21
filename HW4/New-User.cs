@@ -41,7 +41,7 @@ namespace HW4
             foreach (string specificLine in pathLins)
             {
                 var fileToJson = JsonConvert.DeserializeObject<NewUserModal>(specificLine);
-                if(specificLine == "" && fileToJson.id != Id)
+                if(specificLine == "")
                 {
                     return Id;
                 }else if (fileToJson.id == Id)
