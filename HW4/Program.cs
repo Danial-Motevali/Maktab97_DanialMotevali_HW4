@@ -15,6 +15,7 @@ namespace HW4
             {
                 Console.Clear();
                 Console.WriteLine("--1.New user/2.Show list/3.Updata user/4.Delete user--");
+                Console.Write("-");
                 input = Convert.ToInt32(Console.ReadLine());
 
                 if(input == 1)
@@ -36,6 +37,7 @@ namespace HW4
                     else
                     {
                         Console.WriteLine("Unsuccessful to add user");
+                        Thread.Sleep(3000);
                     }
                 }
                 else if(input == 2)
