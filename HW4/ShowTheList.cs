@@ -14,14 +14,14 @@ namespace HW4
         {   
             int id = 1;
             var lines = File.ReadAllLines(path); 
-            object[] list = new object[lines.Length];
+            String[] list = new String[lines.Length];
             
             foreach (string line in lines)
             {
                 var speficLine = JsonConvert.DeserializeObject<NewUserModal>(line);
                 if( speficLine.id == id)
                 {
-                    list.Append(speficLine);
+                    list.Append(speficLine.ToString());
                     id++;
                 }
             }

@@ -50,7 +50,10 @@ namespace HW4
                     {
                         Console.WriteLine(list);
                     }
-                }else if (input == 3)
+                    Console.WriteLine("press eny key to contnue");
+                    Console.ReadKey();
+                }
+                else if (input == 3)
                 {
 
                 }else if (input == 4)
