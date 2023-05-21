@@ -10,22 +10,28 @@ namespace HW4
     public class ShowTheList
     {
         
-        public object[] ShowList(string path)
+        public string[] ShowList(string path)
         {   
             int id = 1;
             var lines = File.ReadAllLines(path); 
-            String[] list = new String[lines.Length];
+            object[] list = new object[lines.Length];
+            string[] objectLine = new string[lines.Length];
             
             foreach (string line in lines)
             {
                 var speficLine = JsonConvert.DeserializeObject<NewUserModal>(line);
                 if( speficLine.id == id)
                 {
-                    list.Append(speficLine.ToString());
+                    list.Append(speficLine);
                     id++;
                 }
             }
-            return list;
+            var sortedList = JsonConvert.SerializeObject(list);
+            StreamWriter sw = new StreamWriter(path);
+            sw.Write(sortedList);
+            sw.Close();
+
+            return objectLine;
         }
     }
 }
