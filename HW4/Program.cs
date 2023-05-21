@@ -11,6 +11,7 @@ namespace HW4
             f.Close();
             
             int input = 0;
+            int idForDelete = 0;
             string inputShowList;
             string name = string.Empty;
             long phoneNumber = 0;
@@ -70,7 +71,9 @@ namespace HW4
 
                     }else if(inputShowList == "2")
                     {
-                        delete_User.delete(2);
+                        Console.Write("wich Id: ");
+                        idForDelete = Convert.ToInt32(Console.ReadLine());
+                        delete_User.delete(idForDelete);
                     }
                     else
                     {
