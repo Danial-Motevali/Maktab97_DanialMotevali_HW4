@@ -45,12 +45,14 @@ namespace HW4
                 }
                 else if(input == 2)
                 {
+                    Console.Clear();
+                    Console.WriteLine("--your are now see the existing list--\n");
                     var list = showList.ShowList(path);
                     foreach(var item in list)
                     {
                         Console.WriteLine(item);
                     }
-                    Console.WriteLine("press eny key to contnue");
+                    Console.WriteLine("\npress eny key to contnue");
                     Console.ReadKey();
                 }
                 else if (input == 3)
