@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace HW4
 {
-    internal class IsValid
+    public class IsValid
     {
+        public void newUser (string name, ) 
+        {
+
+        }
     }
 }

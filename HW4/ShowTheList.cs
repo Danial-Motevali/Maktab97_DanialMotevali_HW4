@@ -7,7 +7,6 @@ namespace HW4
 
         public string[] ShowList(string path)
         {
-
             int i = 0;
             var g = File.ReadAllLines(path);
             string[] f = new string[g.Length];
