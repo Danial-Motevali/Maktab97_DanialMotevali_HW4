@@ -16,7 +16,6 @@ namespace HW4
     {
         string path = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName + "\\FileDataStorage.csv";
         int finalId = 1;
-
         public bool AddingUser(string name, long phoneNumber, DateTime birthDay)
         {
             string date = string.Empty;
