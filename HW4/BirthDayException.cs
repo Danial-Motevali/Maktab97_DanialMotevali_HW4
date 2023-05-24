@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace HW4
 {
-    internal class BirthDayException
+    public class BirthDayException : Exception
     {
+        public BirthDayException(string massage) 
+            : base(massage) { }
     }
 }
