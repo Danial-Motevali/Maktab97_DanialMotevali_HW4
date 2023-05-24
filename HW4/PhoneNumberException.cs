@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace HW4
 {
-    internal class PhoneNumberException
+    public class PhoneNumberException : Exception
     {
+        public PhoneNumberException(string massage)
+            : base(massage);
     }
 }
