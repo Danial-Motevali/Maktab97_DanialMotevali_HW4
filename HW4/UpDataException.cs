@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace HW4
 {
-    internal class UpDataException
+    public class UpDataException : Exception
     {
+        public UpDataException(string massage) 
+            : base(massage) { }
     }
 }
