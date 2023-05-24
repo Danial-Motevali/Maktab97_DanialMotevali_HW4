@@ -12,11 +12,11 @@ namespace HW4
         string? path = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName + "\\FileDataStorage.csv";
         public bool newUser (long phonenumber, DateTime birthday) 
         {
-            if(phonenumber > 12 || phonenumber < 10)
+            if(phonenumber > 99999999999 || phonenumber < 999999999)
             {
                 throw new PhoneNumberException("not valid phone number");
             }
-            if(birthday < DateTime.Now)
+            if(birthday > DateTime.Now)
             {
                 throw new BirthDayException("you dont born yet");
             }
@@ -24,11 +24,16 @@ namespace HW4
         }
         public bool updata (int id)
         {
+            int count = 0;
             var jsonId = File.ReadAllLines(path);
             foreach(var line in jsonId)
             {
                 var specficId = JsonConvert.DeserializeObject<NewUserModal>(line);
                 if(specficId.id != id) 
+                {
+                    count++;
+                }
+                if(count == jsonId.Length) 
                 {
                     throw new UpDataException("not user found");
                 }
