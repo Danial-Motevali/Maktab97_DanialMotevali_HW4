@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace HW4
 {
-    public class IsValid
+    internal class PhoneNumberException
     {
-        public bool newUser (long phonenumber, DateTime birthday) 
-        {
-
-
-            return true;
-        }
     }
 }
