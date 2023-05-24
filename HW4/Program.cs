@@ -26,10 +26,6 @@ namespace HW4
             Delete_User delete_User = new Delete_User();
             UpData upData = new UpData();
             IsValid valid = new IsValid();
-<<<<<<< HEAD
-
-=======
->>>>>>> valideshen
 
             do
             {
@@ -49,29 +45,28 @@ namespace HW4
                     Console.Write("Birth-Day: ");
                     bithDay = Convert.ToDateTime(Console.ReadLine());
                     var validornot = valid.newUser(phoneNumber, bithDay);
-<<<<<<< HEAD
                     if (validornot == true)
-=======
-                    var addingStutse = user.AddingUser(name, phoneNumber, bithDay);
-                    if (addingStutse == true)
->>>>>>> valideshen
                     {
-                       var addingStutse = user.AddingUser(name, phoneNumber, bithDay);
+
+                        var addingStutse = user.AddingUser(name, phoneNumber, bithDay);
                         if (addingStutse == true)
                         {
-                        Console.WriteLine("you have successfully add new user");
-                        Thread.Sleep(2000);
+                            Console.WriteLine("you have successfully add new user");
+                            Thread.Sleep(2000);
                         }
                         else
                         {
-                        Console.WriteLine("Unsuccessful to add user");
-                        Thread.Sleep(2000);
+                            Console.WriteLine("Unsuccessful to add user");
+                            Thread.Sleep(2000);
                         }
                     }
                     else
                     {
                         continue;
                     }
+                
+                   
+                    
                 }
                 else if (input == 2)
                 {
@@ -100,7 +95,7 @@ namespace HW4
                         phoneNumber = Convert.ToInt64(Console.ReadLine());
                         Console.Write("Birth-Day: ");
                         bithDay = Convert.ToDateTime(Console.ReadLine());
-                        var validup = valid.UpData(idForUpdata);
+                        var validup = valid.updata(idForUpdata);
                         if(validup == true)
                         {
                             var status = upData.upData(idForUpdata, name, phoneNumber, bithDay);
