@@ -14,5 +14,10 @@ namespace HW4
 
             return true;
         }
+        public bool updata (int id)
+        {
+
+            return true;
+        }
     }
 }
