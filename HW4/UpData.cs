@@ -13,6 +13,7 @@ namespace HW4
         string? path = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName + "\\FileDataStorage.csv";
         public bool upData(int id, string name,long phone,DateTime birth)
         {
+
             Delete_User delete = new Delete_User();
             delete.delete(id);
 

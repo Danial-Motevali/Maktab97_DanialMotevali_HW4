@@ -25,6 +25,8 @@ namespace HW4
             ShowTheList showList = new ShowTheList();
             Delete_User delete_User = new Delete_User();
             UpData upData = new UpData();
+            IsValid valid = new IsValid();
+
 
             do
             {
@@ -43,16 +45,24 @@ namespace HW4
                     phoneNumber = Convert.ToInt64(Console.ReadLine());
                     Console.Write("Birth-Day: ");
                     bithDay = Convert.ToDateTime(Console.ReadLine());
-                    var addingStutse = user.AddingUser(name, phoneNumber, bithDay);
-                    if (addingStutse == true)
+                    var validornot = valid.newUser(phoneNumber, bithDay);
+                    if (validornot == true)
                     {
+                       var addingStutse = user.AddingUser(name, phoneNumber, bithDay);
+                        if (addingStutse == true)
+                        {
                         Console.WriteLine("you have successfully add new user");
                         Thread.Sleep(2000);
+                        }
+                        else
+                        {
+                        Console.WriteLine("Unsuccessful to add user");
+                        Thread.Sleep(2000);
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("Unsuccessful to add user");
-                        Thread.Sleep(2000);
+                        continue;
                     }
                 }
                 else if (input == 2)
@@ -82,17 +92,26 @@ namespace HW4
                         phoneNumber = Convert.ToInt64(Console.ReadLine());
                         Console.Write("Birth-Day: ");
                         bithDay = Convert.ToDateTime(Console.ReadLine());
-                        var status = upData.upData(idForUpdata, name, phoneNumber, bithDay);
-                        if (status == true)
+                        var validup = valid.UpData(idForUpdata);
+                        if(validup == true)
                         {
-                            Console.WriteLine("you updata you user-name succesfuly");
-                            Thread.Sleep(2000);
+                            var status = upData.upData(idForUpdata, name, phoneNumber, bithDay);
+                            if (status == true)
+                            {
+                                Console.WriteLine("you updata you user-name succesfuly");
+                                Thread.Sleep(2000);
+                            }
+                            else
+                            {
+                                Console.WriteLine("you cont updata you user-name");
+                                Thread.Sleep(2000);
+                            }
                         }
                         else
                         {
-                            Console.WriteLine("you cont updata you user-name");
-                            Thread.Sleep(2000);
+                            Console.WriteLine("you cont updata you user");
                         }
+                        
                     }
                     else if(inputShowList == "2")
                     {
