@@ -26,7 +26,10 @@ namespace HW4
             Delete_User delete_User = new Delete_User();
             UpData upData = new UpData();
             IsValid valid = new IsValid();
+<<<<<<< HEAD
 
+=======
+>>>>>>> valideshen
 
             do
             {
@@ -46,7 +49,12 @@ namespace HW4
                     Console.Write("Birth-Day: ");
                     bithDay = Convert.ToDateTime(Console.ReadLine());
                     var validornot = valid.newUser(phoneNumber, bithDay);
+<<<<<<< HEAD
                     if (validornot == true)
+=======
+                    var addingStutse = user.AddingUser(name, phoneNumber, bithDay);
+                    if (addingStutse == true)
+>>>>>>> valideshen
                     {
                        var addingStutse = user.AddingUser(name, phoneNumber, bithDay);
                         if (addingStutse == true)
