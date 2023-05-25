@@ -8,6 +8,7 @@ namespace HW4
 {
     public class PhoneNumberException : Exception
     {
+        public PhoneNumberException() { }
         public PhoneNumberException(string massage)
             : base(massage) { }
     }

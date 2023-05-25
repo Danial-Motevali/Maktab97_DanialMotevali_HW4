@@ -8,6 +8,7 @@ namespace HW4
 {
     public class UpDataException : Exception
     {
+        public UpDataException() { }
         public UpDataException(string massage) 
             : base(massage) { }
     }

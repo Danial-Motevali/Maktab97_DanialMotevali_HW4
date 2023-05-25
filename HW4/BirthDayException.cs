@@ -8,6 +8,7 @@ namespace HW4
 {
     public class BirthDayException : Exception
     {
+        public BirthDayException() { }
         public BirthDayException(string massage) 
             : base(massage) { }
     }
